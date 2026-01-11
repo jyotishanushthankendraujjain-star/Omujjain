@@ -1,324 +1,255 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-<title>Jyotish Anushthan Karmakand Kendra, Ujjain</title>
-
-<!-- GOOGLE FONTS -->
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;600&family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jyotish Anushthan Karmakand Kendra – Ujjain</title>
 
 <style>
 :root{
-  --gold:#D4AF37;
-  --white:#ffffff;
-  --cream:#FFF8E7;
-  --yellow:#FFF1B8;
-  --maroon:#7B1E1E;
-  --red:#A00000;
-  --grey:#EDEDED;
-  --silver:#BFC1C2;
+  --gold:#d4af37;
+  --dark:#1c1c1c;
+  --light:#f9f9f9;
 }
 
-*{margin:0;padding:0;box-sizing:border-box}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif;}
 
-body{
-  font-family:Poppins, sans-serif;
-  background:linear-gradient(to bottom,var(--white),var(--cream));
-  color:#333;
-}
+body{background:var(--light);}
 
-/* ===== SIDEBAR ===== */
-.sidebar{
-  position:fixed;
-  top:0; left:0;
-  width:260px;
-  height:100vh;
-  background:var(--white);
-  box-shadow:0 0 25px rgba(0,0,0,.05);
-  padding:20px;
-  overflow-y:auto;
-}
-
-.logo{
+/* HEADER */
+header{
+  background:linear-gradient(45deg,#000,#333);
+  color:#fff;
+  padding:18px;
   text-align:center;
-  font-family:'Playfair Display';
-  color:var(--gold);
-  font-size:20px;
-  margin-bottom:30px;
+  font-size:22px;
 }
 
-.menu a{
-  display:flex;
-  align-items:center;
-  padding:12px 15px;
-  text-decoration:none;
-  color:#444;
-  border-radius:10px;
-  margin-bottom:8px;
-  transition:.3s;
-}
+/* LAYOUT */
+.container{display:flex;min-height:100vh;}
 
-.menu a:hover{
-  background:var(--cream);
-  box-shadow:0 0 10px rgba(212,175,55,.3);
+/* SIDEBAR */
+.sidebar{
+  width:240px;
+  background:#111;
+  color:#fff;
+  padding:20px;
 }
-
-.menu a.active{
-  border-left:4px solid var(--gold);
-  background:var(--cream);
+.sidebar h3{color:var(--gold);text-align:center;margin-bottom:15px;}
+.sidebar a{
+  display:block;color:#fff;text-decoration:none;
+  padding:12px;margin-bottom:8px;border-radius:8px;
 }
+.sidebar a:hover{background:var(--gold);color:#000;}
 
-/* ===== MAIN ===== */
-.main{
-  margin-left:260px;
-  padding:40px;
-}
+/* MAIN */
+.main{flex:1;padding:25px;}
 
-/* ===== HERO ===== */
-.hero{
-  background:linear-gradient(to bottom,#fff,#fff8e7);
-  border-radius:20px;
-  padding:60px;
-  position:relative;
-  overflow:hidden;
-}
-
-.hero::after{
-  content:"ॐ नमः शिवाय";
-  position:absolute;
-  font-size:80px;
-  color:rgba(212,175,55,.08);
-  bottom:20px;
-  right:40px;
-  font-family:'Noto Serif Devanagari';
-}
-
-.hero h1{
-  font-family:'Noto Serif Devanagari';
-  font-size:36px;
-  color:var(--gold);
-  margin-bottom:15px;
-}
-
-.hero p{
-  max-width:600px;
-  font-size:16px;
-}
-
-.hero-buttons{
-  margin-top:30px;
-}
-
-.btn-primary{
-  background:linear-gradient(45deg,#d4af37,#fff1b8);
-  padding:12px 25px;
-  border:none;
-  border-radius:30px;
-  margin-right:15px;
-  cursor:pointer;
-  box-shadow:0 0 20px rgba(212,175,55,.4);
-}
-
-.btn-secondary{
-  background:#fff;
-  border:2px solid var(--gold);
-  padding:10px 25px;
-  border-radius:30px;
-  cursor:pointer;
-  color:var(--gold);
-}
-
-/* ===== SECTION ===== */
+/* SECTION */
 .section{
-  margin-top:60px;
-}
-
-.section h2{
-  font-family:'Noto Serif Devanagari';
-  font-size:28px;
-  color:var(--maroon);
-  margin-bottom:25px;
-  position:relative;
-}
-
-.section h2::after{
-  content:"";
-  width:80px;
-  height:3px;
-  background:var(--gold);
-  display:block;
-  margin-top:8px;
-}
-
-/* ===== CARDS ===== */
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
-}
-
-.card{
   background:#fff;
   padding:25px;
+  margin-bottom:30px;
   border-radius:16px;
-  box-shadow:0 0 20px rgba(0,0,0,.05);
-  transition:.3s;
+  box-shadow:0 0 18px rgba(0,0,0,.05);
 }
+.section h2{color:var(--gold);margin-bottom:15px;}
 
-.card:hover{
-  transform:translateY(-6px);
-  box-shadow:0 0 30px rgba(212,175,55,.3);
+/* SERVICES */
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
 }
-
-.card h3{
-  font-family:'Noto Serif Devanagari';
-  color:var(--gold);
+.service-card{
+  background:#fafafa;
+  padding:18px;
+  border-radius:14px;
+  box-shadow:0 0 15px rgba(0,0,0,.05);
+}
+.service-card h4{
+  color:#000;
   margin-bottom:10px;
+  border-bottom:1px solid #eee;
+  padding-bottom:5px;
+}
+.service-card ul{padding-left:18px;font-size:14px;line-height:1.8;}
+
+/* RASHIFAL */
+.rashifal-tabs{display:flex;gap:12px;margin:20px 0;flex-wrap:wrap;}
+.tab{
+  padding:10px 22px;border-radius:25px;
+  border:2px solid var(--gold);
+  background:#fff;color:var(--gold);cursor:pointer;
+}
+.tab.active{background:linear-gradient(45deg,#d4af37,#fff1b8);color:#000;}
+
+.rashi-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(110px,1fr));
+  gap:18px;margin-top:20px;
+}
+.rashi-card{
+  background:#fff;padding:18px;text-align:center;
+  border-radius:16px;cursor:pointer;
+  box-shadow:0 0 15px rgba(0,0,0,.05);
+}
+.rashi-card:hover{transform:translateY(-4px);}
+.rashi-icon{font-size:32px;color:var(--gold);}
+
+.rashifal-result{
+  margin-top:25px;padding:20px;
+  background:#fff;border-radius:16px;
+  box-shadow:0 0 15px rgba(0,0,0,.05);
 }
 
-.card ul{
-  font-size:14px;
-  line-height:1.7;
-}
-
-/* ===== FOOTER ===== */
+/* FOOTER */
 footer{
-  margin-top:80px;
-  padding:30px;
-  background:#fff;
-  border-radius:20px;
-  text-align:center;
-  font-size:14px;
-  color:#666;
-}
-
-/* ===== LANGUAGE TOGGLE ===== */
-.lang{
-  position:fixed;
-  top:20px;
-  right:20px;
-}
-
-.lang button{
-  border:none;
-  background:var(--gold);
-  color:#fff;
-  padding:6px 15px;
-  border-radius:20px;
-  cursor:pointer;
-}
-
-/* ===== MOBILE ===== */
-@media(max-width:900px){
-  .sidebar{display:none}
-  .main{margin:0;padding:20px}
+  background:#111;color:#ccc;
+  text-align:center;padding:15px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- LANGUAGE -->
-<div class="lang">
-  <button onclick="toggleLang()">हिंदी / English</button>
-</div>
+<header>🔱 Jyotish Anushthan Karmakand Kendra – Ujjain</header>
+
+<div class="container">
 
 <!-- SIDEBAR -->
 <div class="sidebar">
-  <div class="logo">Ujjain Wale Panditji</div>
-  <div class="menu">
-    <a class="active">Home</a>
-    <a>Services</a>
-    <a>Rashifal</a>
-    <a>Kundli</a>
-    <a>Panchang</a>
-    <a>Bhakti Sagar</a>
-    <a>Ujjain Darshan</a>
-    <a>Kumbh Mela 2028</a>
-    <a>Shop</a>
-    <a>Books</a>
-    <a>About Us</a>
-    <a>Legal</a>
-  </div>
+  <h3>Menu</h3>
+  <a href="#home">🏠 Home</a>
+  <a href="#about">🕉️ About</a>
+  <a href="#services">📿 Services</a>
+  <a href="#rashifal">🔮 Rashifal</a>
+  <a href="#contact">📞 Contact</a>
 </div>
 
 <!-- MAIN -->
 <div class="main">
 
-  <!-- HERO -->
-  <div class="hero">
-    <h1>ज्योतिष अनुष्ठान कर्मकांड केंद्र, उज्जैन</h1>
-    <p>
-      महाकाल की पावन नगरी उज्जैन से संचालित, शुद्ध वैदिक परंपराओं द्वारा
-      ज्योतिष, अनुष्ठान, तंत्र साधना एवं आध्यात्मिक सेवाएं।
-    </p>
-
-    <div class="hero-buttons">
-      <button class="btn-primary">पूजा बुक करें</button>
-      <button class="btn-secondary">ज्योतिष परामर्श लें</button>
-    </div>
-  </div>
-
-  <!-- SERVICES -->
-  <div class="section">
-    <h2>हमारी प्रमुख सेवाएं</h2>
-    <div class="cards">
-
-      <div class="card">
-        <h3>ज्योतिष सेवाएं</h3>
-        <ul>
-          <li>जन्म कुंडली विश्लेषण</li>
-          <li>विवाह मिलान</li>
-          <li>करियर व व्यापार</li>
-          <li>प्रश्न कुंडली</li>
-          <li>ग्रह शांति उपाय</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>उज्जैन विशेष सेवाएं</h3>
-        <ul>
-          <li>महाकाल दर्शन व्यवस्था</li>
-          <li>भस्म आरती मार्गदर्शन</li>
-          <li>क्षिप्रा स्नान</li>
-          <li>रामघाट अनुष्ठान</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>शक्ति तंत्र अनुष्ठान</h3>
-        <ul>
-          <li>दस महाविद्या अनुष्ठान</li>
-          <li>बगलामुखी साधना</li>
-          <li>काल भैरव अनुष्ठान</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h3>पाठ एवं जाप</h3>
-        <ul>
-          <li>महामृत्युंजय पाठ</li>
-          <li>दुर्गा सप्तशती</li>
-          <li>मंत्र जाप</li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- FOOTER -->
-  <footer>
-    © 2026 Jyotish Anushthan Karmakand Kendra, Ujjain  
-    <br/>शुद्ध वैदिक परंपरा | विश्वसनीय आध्यात्मिक सेवाएं
-  </footer>
-
+<div class="section" id="home">
+  <h2>Welcome</h2>
+  <p>वैदिक ज्योतिष, अनुष्ठान एवं कर्मकांड की प्रमाणिक सेवाएँ – उज्जैन से।</p>
 </div>
 
+<div class="section" id="about">
+  <h2>About Us</h2>
+  <p>हम वैदिक शास्त्रों पर आधारित कुंडली, पूजा-पाठ, दोष निवारण एवं विशेष अनुष्ठान सेवाएँ प्रदान करते हैं।</p>
+</div>
+
+<!-- SERVICES -->
+<div class="section" id="services">
+<h2>Our Services</h2>
+
+<div class="service-grid">
+
+<div class="service-card">
+<h4>🔮 ज्योतिष सेवाएँ</h4>
+<ul>
+<li>जन्म कुंडली विश्लेषण</li>
+<li>विवाह मिलान</li>
+<li>करियर एवं व्यापार ज्योतिष</li>
+<li>प्रश्न कुंडली</li>
+<li>वार्षिक भविष्यफल</li>
+</ul>
+</div>
+
+<div class="service-card">
+<h4>🛕 उज्जैन विशेष सेवाएँ</h4>
+<ul>
+<li>महाकाल विशेष पूजा</li>
+<li>भस्म आरती दर्शन</li>
+<li>महामृत्युंजय जाप</li>
+</ul>
+</div>
+
+<div class="service-card">
+<h4>🔥 शक्ति तंत्र अनुष्ठान</h4>
+<ul>
+<li>वशीकरण निवारण</li>
+<li>ऊर्जा शुद्धि</li>
+<li>तंत्र बाधा समाधान</li>
+</ul>
+</div>
+
+<div class="service-card">
+<h4>📿 पाठ सेवाएँ</h4>
+<ul>
+<li>रुद्राभिषेक</li>
+<li>सत्यनारायण कथा</li>
+<li>शिव पुराण पाठ</li>
+</ul>
+</div>
+
+<div class="service-card">
+<h4>📜 दोष निवारण</h4>
+<ul>
+<li>कालसर्प दोष</li>
+<li>पितृ दोष</li>
+<li>मंगल दोष</li>
+</ul>
+</div>
+
+<div class="service-card">
+<h4>🪔 पितृ मोक्ष कर्म</h4>
+<ul>
+<li>श्राद्ध कर्म</li>
+<li>तर्पण विधि</li>
+<li>नारायण बलि</li>
+</ul>
+</div>
+
+</div>
+</div>
+
+<!-- RASHIFAL -->
+<div class="section" id="rashifal">
+<h2>राशिफल</h2>
+
+<div class="rashifal-tabs">
+<button class="tab active" onclick="setPeriod('daily',this)">दैनिक</button>
+<button class="tab" onclick="setPeriod('weekly',this)">साप्ताहिक</button>
+<button class="tab" onclick="setPeriod('monthly',this)">मासिक</button>
+<button class="tab" onclick="setPeriod('yearly',this)">वार्षिक</button>
+</div>
+
+<div class="rashi-grid">
+<div class="rashi-card" onclick="openRashi('mesh')"><div class="rashi-icon">♈</div>मेष</div>
+<div class="rashi-card" onclick="openRashi('vrishabh')"><div class="rashi-icon">♉</div>वृषभ</div>
+<div class="rashi-card" onclick="openRashi('mithun')"><div class="rashi-icon">♊</div>मिथुन</div>
+<div class="rashi-card" onclick="openRashi('kark')"><div class="rashi-icon">♋</div>कर्क</div>
+</div>
+
+<div class="rashifal-result" id="result">किसी भी राशि पर क्लिक करें</div>
+</div>
+
+<div class="section" id="contact">
+<h2>Contact</h2>
+<p>📞 WhatsApp / Call पर संपर्क करें</p>
+</div>
+
+</div>
+</div>
+
+<footer>© 2026 Jyotish Anushthan Karmakand Kendra</footer>
+
 <script>
-function toggleLang(){
-  alert("Next step: full Hindi-English content toggle via JSON.");
+let period="daily";
+function setPeriod(p,btn){
+  period=p;
+  document.querySelectorAll(".tab").forEach(b=>b.classList.remove("active"));
+  btn.classList.add("active");
+}
+function openRashi(r){
+  const data={
+    mesh:{daily:"आज शुभ दिन।",weekly:"सफलता के योग।",monthly:"उन्नति।",yearly:"शुभ वर्ष।"},
+    vrishabh:{daily:"धन लाभ।",weekly:"परिवार सुख।",monthly:"स्थिरता।",yearly:"आर्थिक मजबूती।"}
+  };
+  document.getElementById("result").innerHTML=
+  "<b>"+period.toUpperCase()+" राशिफल</b><br>"+(data[r]?.[period]||"जल्द अपडेट होगा");
 }
 </script>
 
